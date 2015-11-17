@@ -80,7 +80,7 @@ module CompileExtensions
     end
 
     def dependency_satisfies_current_stack(dependency)
-      ENV['SKIP_CF_STACK_CHECK'] || dependency['cf_stacks'].include?(stack)
+      ENV['SKIP_CF_STACK_CHECK'] == "true" || dependency['cf_stacks'].include?(stack)
     end
 
     def stack
